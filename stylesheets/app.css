@@ -39,7 +39,7 @@ main {
     }
 
     &:nth-of-type(3) {
-      height: 70dvh;
+      min-height: 70dvh;
       background-color: black;
       color: white;
       padding: 2rem;

@@ -24,7 +24,7 @@ gsap.from("h1", {
   gsap.from("section:nth-of-type(3) p", {
     scrollTrigger: {
       trigger: "section:nth-of-type(3) p",
-      start: "top 80%", 
+      start: "top 70%", 
       toggleActions: "play none none none",
     },
     y: 50,

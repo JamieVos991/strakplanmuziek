@@ -19,7 +19,7 @@
   --font-groote-p: 1.1rem;
   --font-groote-h1: clamp(3rem, 35vw, 100vh);
   --font-groote-h2: 2rem;
-  --font-groote-h3: 1.5rem;
+  --font-groote-h3: 1.3rem;
 
   --line-hoogte-heading: 1.2;
   --line-hoogte-p: 1.4;
@@ -37,6 +37,11 @@ a {
   font-family: var(--font-family-gillsans);
 }
 
+h2,
+h3 {
+  line-height: var(--line-hoogte-heading);
+}
+
 .font-h1 {
   font-size: var(--font-groote-h1);
 }
@@ -44,11 +49,11 @@ a {
 .font-h2 {
   font-size: var(--font-groote-h2);
   font-family: var(--font-family-gillsans);
-  line-height: var(--line-hoogte-heading);
 }
 
-.font-h3 {
+h3 {
   font-size: var(--font-groote-h3);
+  font-family: var(--font-family-gillsans);
 }
 
 .geen-bullets {

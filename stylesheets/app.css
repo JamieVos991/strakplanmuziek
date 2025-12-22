@@ -4,6 +4,8 @@ body {
 
 main {
   section {
+    max-width: 100vw;
+
     &:nth-of-type(1) {
       display: grid;
       place-content: center;
@@ -13,8 +15,6 @@ main {
       h1 {
         color: var(--kleur-primair-h1);
         font-family: var(--font-family-bebas);
-        font-size: clamp(3rem, 35vw, 100vh);
-
         display: table;
         line-height: 0.8;
         word-break: break-word;
@@ -39,14 +39,31 @@ main {
     }
 
     &:nth-of-type(3) {
-      min-height: 70vh;
+      min-height: 80vh;
       background-color: black;
       color: white;
       padding: 2rem;
+      padding-top: 3rem;
       position: relative;
 
-      p {
-        font-size: 1.5rem;
+      ul {
+        display: grid;
+        gap: 1rem;
+
+        li {
+          a {
+            background: #971000;
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            position: relative;
+            height: 2.5rem;
+            width: 7.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
 
       img {
@@ -65,10 +82,24 @@ main {
       z-index: 1;
       position: relative;
       padding: 2rem;
+    }
 
-      h2 {
-        font-family: var(--font-family-gillsans);
-        font-size: 2rem;
+    &:nth-of-type(5) {
+      padding: 2rem;
+
+      ul {
+        display: grid;
+        gap: 1rem;
+
+        li {
+          p {
+            color: white;
+          }
+
+          h2 {
+            color: white;
+          }
+        }
       }
     }
   }

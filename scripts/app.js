@@ -21,10 +21,10 @@ gsap.from("h1", {
     ease: "power3.out",
   });
   
-  gsap.from("section:nth-of-type(3) p", {
+  gsap.from("section:nth-of-type(3) p, a, h2", {
     scrollTrigger: {
       trigger: "section:nth-of-type(3) p",
-      start: "top 70%", 
+      start: "top 80%", 
       toggleActions: "play none none none",
     },
     y: 50,

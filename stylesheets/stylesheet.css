@@ -15,9 +15,42 @@
   --font-family-bebas: "Bebas Neue", sans-serif;
   --font-family-gillsans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
+
+  --font-groote-p: 1.1rem;
+  --font-groote-h1: clamp(3rem, 35vw, 100vh);
+  --font-groote-h2: 2rem;
+  --font-groote-h3: 1.5rem;
+
+  --line-hoogte-heading: 1.2;
+  --line-hoogte-p: 1.4;
+
+  --geen-bullets: none;
 }
 
 p {
-  line-height: 1.4;
+  line-height: var(--line-hoogte-p);
+  font-size: var(--font-groote-p);
   font-family: var(--font-family-gillsans);
+}
+
+a {
+  font-family: var(--font-family-gillsans);
+}
+
+.font-h1 {
+  font-size: var(--font-groote-h1);
+}
+
+.font-h2 {
+  font-size: var(--font-groote-h2);
+  font-family: var(--font-family-gillsans);
+  line-height: var(--line-hoogte-heading);
+}
+
+.font-h3 {
+  font-size: var(--font-groote-h3);
+}
+
+.geen-bullets {
+  list-style: var(--geen-bullets);
 }

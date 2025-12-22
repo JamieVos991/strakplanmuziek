@@ -70,14 +70,28 @@
         if (!vinyl) return;
 
         let angle = 0;
+        let spinning = false;
 
         function spinVinyl() {
-          angle = (angle + 0.8) % 360; // keep it between 0–359
-          vinyl.style.transform = `translateY(50%) rotate(${angle}deg)`;
+          if (spinning) {
+            angle = (angle + 1) % 360; // keep angle between 0–359
+            vinyl.style.transform = `translateY(50%) rotate(${angle}deg)`;
+          }
           requestAnimationFrame(spinVinyl);
         }
 
+        // Start the animation loop
         spinVinyl();
+
+        // Intersection Observer to detect when vinyl is in viewport
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            spinning = entry.isIntersecting;
+          },
+          { threshold: 0.1 } // 10% visible to start spinning
+        );
+
+        observer.observe(vinyl);
       });
     </script>
   </body>

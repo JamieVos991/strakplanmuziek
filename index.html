@@ -65,10 +65,19 @@
       </section>
     </main>
     <script>
-      window.addEventListener("load", () => {
-        const transformVinyl = document.querySelector("#vinyl");
-        transformVinyl.style.transform = "translateY(50%)";
-        transformVinyl.offsetHeight;
+      document.addEventListener("DOMContentLoaded", () => {
+        const vinyl = document.getElementById("vinyl");
+        if (!vinyl) return;
+
+        let angle = 0;
+
+        function spinVinyl() {
+          angle += 0.5; // adjust speed
+          vinyl.style.transform = `translateY(50%) rotate(${angle}deg)`;
+          requestAnimationFrame(spinVinyl);
+        }
+
+        spinVinyl();
       });
     </script>
   </body>

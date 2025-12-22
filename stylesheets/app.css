@@ -74,6 +74,7 @@ main {
         width: 100%;
         animation: draaien 5s linear infinite;
         overflow: hidden;
+        will-change: transform;
         transform: translateY(50%);
       }
     }

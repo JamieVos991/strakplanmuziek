@@ -41,7 +41,7 @@
           </li>
         </ul>
 
-        <img src="./assets/vinyl.webp" alt="Draaiende Vinyl" />
+        <img id="vinyl" src="./assets/vinyl.webp" alt="Draaiende Vinyl" />
       </section>
       <section>
         <h2 class="font-h2">Eerst volgende shows</h2>
@@ -64,5 +64,12 @@
         </ul>
       </section>
     </main>
+    <script>
+      window.addEventListener("load", () => {
+        const transformVinyl = document.querySelector("#vinyl");
+        transformVinyl.style.transform = "translateY(50%)";
+        transformVinyl.offsetHeight;
+      });
+    </script>
   </body>
 </html>

@@ -5,6 +5,7 @@ body {
 
 #vinyl {
   transform: translateY(50%) !important;
+  z-index: -1;
 }
 
 main {
@@ -49,6 +50,7 @@ main {
       color: white;
       padding: 2rem;
       padding-top: 3rem;
+      z-index: -1;
       position: relative;
 
       ul {

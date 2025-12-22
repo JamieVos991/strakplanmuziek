@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --kleur-primair-h1: #e1dcd6;
+  --kleur-secundair-h1: #b19b9b;
+
+  --font-family-bebas: "Bebas Neue", sans-serif;
+  --font-family-gillsans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}

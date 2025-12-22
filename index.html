@@ -72,7 +72,7 @@
         let angle = 0;
 
         function spinVinyl() {
-          angle += 0.5; // adjust speed
+          angle = (angle + 0.8) % 360; // keep it between 0–359
           vinyl.style.transform = `translateY(50%) rotate(${angle}deg)`;
           requestAnimationFrame(spinVinyl);
         }

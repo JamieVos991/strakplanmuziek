@@ -33,9 +33,11 @@ main {
 
     &:nth-of-type(2) {
       height: 80dvh;
+      width: 100dvw;
 
       img {
         height: 100%;
+        object-fit: cover;
         max-width: 100%;
       }
     }

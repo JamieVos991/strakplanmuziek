@@ -73,7 +73,7 @@ main {
         bottom: 0;
         left: 0;
         width: 100%;
-        /* transform: translateY(50%) !important; */
+        transform: translateY(50%) !important;
         z-index: -1;
         overflow: hidden;
       }

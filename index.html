@@ -64,36 +64,5 @@
         </ul>
       </section>
     </main>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const vinyl = document.getElementById("vinyl");
-        if (!vinyl) return;
-
-        let angle = 0;
-        let spinning = false;
-        let animationId = null;
-
-        function spinVinyl() {
-          angle = (angle + 1) % 360;
-          vinyl.style.transform = `translateY(50%) rotate(${angle}deg)`;
-          animationId = requestAnimationFrame(spinVinyl);
-        }
-
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting && !spinning) {
-              spinning = true;
-              spinVinyl(); // start spinning when in view
-            } else if (!entry.isIntersecting && spinning) {
-              spinning = false;
-              cancelAnimationFrame(animationId); // stop spinning when out of view
-            }
-          },
-          { threshold: 0.1 }
-        );
-
-        observer.observe(vinyl);
-      });
-    </script>
   </body>
 </html>

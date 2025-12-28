@@ -1,0 +1,48 @@
+body {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+  padding: 1rem;
+  font-family: var(--font-family-gillsans);
+}
+
+form {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  gap: 1.5rem;
+
+  header {
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  fieldset {
+    display: grid;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+
+    label {
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    div {
+      display: grid;
+      gap: 0.4rem;
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      input[type="password"] {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -113,9 +113,11 @@ main {
       overflow-x: hidden;
 
       div {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.4);
         height: 100%;
         width: 100%;
+        top: 0;
+        left: 0;
         position: absolute;
         z-index: -1;
       }
@@ -124,6 +126,8 @@ main {
         position: absolute;
         z-index: -2;
         height: 100%;
+        top: 0;
+        left: 0;
       }
       ul:nth-of-type(1) {
         display: grid;

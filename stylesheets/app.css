@@ -110,6 +110,7 @@ main {
 
     &:nth-of-type(5) {
       position: relative;
+      overflow-x: hidden;
 
       div {
         background-color: rgba(0, 0, 0, 0.5);

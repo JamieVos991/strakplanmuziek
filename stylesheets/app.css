@@ -45,7 +45,6 @@ main {
       color: white;
       padding: 2rem;
       padding-top: 3rem;
-      z-index: -1;
       position: relative;
 
       ul {
@@ -74,7 +73,6 @@ main {
         left: 0;
         width: 100%;
         transform: translateY(50%) !important;
-        z-index: -1;
         overflow: hidden;
       }
     }
@@ -250,4 +248,14 @@ footer {
   justify-content: center;
   align-items: center;
   height: 50vh;
+}
+
+.three-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: black;
+  color: white;
+  font-size: 1rem;
 }

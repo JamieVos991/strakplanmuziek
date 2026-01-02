@@ -85,6 +85,22 @@ function renderNextBatch() {
   }
 }
 
+// Mail
+const mailLink = document.getElementById("contact-mail");
+
+if (mailLink) {
+  const user = "info";
+  const domain = "strakplanmuziek.nl";
+
+  mailLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const email = `${user}@${domain}`;
+    window.location.href = `mailto:${email}?subject=Boeking Strak Plan`;
+  });
+}
+
+
 // Init
 document.addEventListener("DOMContentLoaded", () => {
   initGSAP();

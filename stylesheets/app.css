@@ -176,10 +176,6 @@ main {
   }
 
   footer {
-    background: white;
-    height: 20vh;
-    display: grid;
-    place-content: center;
   }
 }
 
@@ -247,4 +243,11 @@ article.popup.is-visible {
   height: 2.5rem;
   width: 12rem;
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }

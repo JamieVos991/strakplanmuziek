@@ -1,6 +1,7 @@
 import { db } from "./firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { initGSAP } from "./gsap.js";
+import { initAlbumCover } from "./three-album.js";
 import { getShowDate, startCountdown } from "./countdown.js";
 
 // DOM
@@ -89,4 +90,5 @@ function renderNextBatch() {
 document.addEventListener("DOMContentLoaded", () => {
   initGSAP();
   loadFutureShows();
+  initAlbumCover();
 });

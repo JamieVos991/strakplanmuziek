@@ -71,6 +71,7 @@ main {
       img {
         position: absolute;
         bottom: 0;
+        background: black;
         left: 0;
         width: 100%;
         transform: translateY(50%) !important;

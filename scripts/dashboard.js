@@ -14,7 +14,7 @@ onAuthStateChanged(auth, (user) => {
   if (!user) {
     window.location.href = "./login.html";
   } else {
-    welcomeMsg.textContent = `Welkom, ${user.email}`;
+    // welcomeMsg.textContent = `Welkom, ${user.email}`;
     loadShows();
   }
 });

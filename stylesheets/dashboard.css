@@ -1,10 +1,47 @@
+* {
+  font-family: var(--font-family-gillsans);
+}
+
 body {
-  padding: 1rem;
+  padding: 2rem;
   display: grid;
   gap: 2rem;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  button {
+    padding: 0.5rem 2rem;
+    background: none;
+    border: 1px solid black;
+    width: fit-content;
+    cursor: pointer;
+  }
 }
 
 main {
   display: grid;
   gap: 2rem;
+
+  form {
+    display: grid;
+    gap: 1rem;
+    padding-top: 1rem;
+
+    label {
+      display: grid;
+      gap: 0.5rem;
+    }
+  }
+
+  details {
+    ul {
+      padding: 1rem 0 0 1rem;
+      display: grid;
+      gap: 2rem;
+    }
+  }
 }

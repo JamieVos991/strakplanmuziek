@@ -37,6 +37,10 @@ a {
   font-family: var(--font-family-gillsans);
 }
 
+ul {
+  list-style: none;
+}
+
 h2,
 h3 {
   line-height: var(--line-hoogte-heading);

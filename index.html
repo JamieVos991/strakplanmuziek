@@ -6,7 +6,8 @@
     <title>Strak Plan Muziek</title>
     <link rel="stylesheet" href="./stylesheets/app.css" />
     <link rel="stylesheet" href="./stylesheets/stylesheet.css" />
-    <script type="module" defer src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/popup.js"></script>
   </head>
   <body>
     <main>
@@ -44,11 +45,13 @@
       <section>
         <ul class="geen-bullets">
           <li>
-            <h2 class="font-h2">Eerst volgende shows</h2>
+            <h2 class="font-h2">Eerst volgende optredens</h2>
             <p>
-              Bekijk hier de eerst volgende shows in de agenda van Strak Plan!
-              Ben je geautoriseerd? Log dan <a href="./login.html">hier</a> in.
+              Bekijk hier de eerst volgende optredens in de agenda van Strak
+              Plan! Ben je geautoriseerd? Log dan
+              <a href="./login.html">hier</a> in.
             </p>
+            <p id="countdown" class="countdown"></p>
           </li>
         </ul>
         <ul class="geen-bullets" id="shows-container"></ul>

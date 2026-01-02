@@ -236,3 +236,15 @@ article.popup {
 article.popup.is-visible {
   pointer-events: auto;
 }
+
+#loadMoreBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-family-gillsans);
+  font-size: 1rem;
+  justify-self: left;
+  border: 1px solid black;
+  height: 2.5rem;
+  width: 12rem;
+  cursor: pointer;
+}

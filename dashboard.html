@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./stylesheets/stylesheet.css" />
+    <link rel="stylesheet" href="./stylesheets/dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="font-h2">Dashboard</h1>
+      <p id="welcomeMsg"></p>
+      <button id="logoutBtn">Logout</button>
+    </header>
+
+    <main>
+      <section>
+        <h2>Nieuwe show toevoegen</h2>
+        <form id="showForm">
+          <label>
+            Naam van de show:
+            <input type="text" id="show-name" required />
+          </label>
+          <label>
+            Plaats:
+            <input type="text" id="show-place" required />
+          </label>
+          <label>
+            Datum:
+            <input type="date" id="show-date" required />
+          </label>
+          <label>
+            Tijd:
+            <input type="time" id="show-time" />
+          </label>
+          <button type="submit">Opslaan</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Toekomstige shows</h2>
+        <details>
+          <summary>Klik om toekomstige shows te bekijken</summary>
+          <ul id="upcoming-shows"></ul>
+        </details>
+      </section>
+
+      <section>
+        <h2>Afgelopen shows</h2>
+        <details>
+          <summary>Klik om afgelopen shows te bekijken</summary>
+          <ul id="past-shows"></ul>
+        </details>
+      </section>
+    </main>
+
+    <script type="module" defer src="./scripts/dashboard.js"></script>
+  </body>
+</html>

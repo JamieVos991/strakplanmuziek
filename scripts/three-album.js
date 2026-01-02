@@ -8,7 +8,6 @@ button?.addEventListener("click", async () => {
 
   button.style.display = "none";
 
-  // Create container
   const footer = document.querySelector("footer");
   const container = document.createElement("div");
   container.id = "album-3d-container";
@@ -17,7 +16,6 @@ button?.addEventListener("click", async () => {
   container.style.margin = "2rem auto";
   footer.appendChild(container);
 
-  // Load scripts dynamically
   await loadScript("https://unpkg.com/three@0.124.0/build/three.js");
   await loadScript("https://unpkg.com/three@0.124.0/examples/js/controls/OrbitControls.js");
 
@@ -54,51 +52,45 @@ function initThree(container) {
   renderer.setSize(container.clientWidth, container.clientHeight);
   container.appendChild(renderer.domElement);
 
-  // Lights
   scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
   const dir = new THREE.DirectionalLight(0xffffff, 0.6);
   dir.position.set(3, 4, 5);
   scene.add(dir);
 
-  // Texture
   const textureLoader = new THREE.TextureLoader();
   const coverTexture = textureLoader.load(
     "./assets/spotify-achtergrond.png"
   );
 
-  // Geometry
   const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.08);
 
   const white = new THREE.MeshStandardMaterial({ color: 0xffffff });
 
   const materials = [
-    white, // right
-    white, // left
-    white, // top
-    white, // bottom
-    new THREE.MeshStandardMaterial({ map: coverTexture }), // front
-    new THREE.MeshStandardMaterial({ map: coverTexture })  // back
+    white, 
+    white, 
+    white, 
+    white, 
+    new THREE.MeshStandardMaterial({ map: coverTexture }), 
+    new THREE.MeshStandardMaterial({ map: coverTexture })  
   ];
 
   const album = new THREE.Mesh(geometry, materials);
   scene.add(album);
 
-  // Controls
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 10;
+  controls.autoRotateSpeed = 8;
 
-  // Resize handling
   window.addEventListener("resize", () => {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
   });
 
-  // Render loop
   function animate() {
     requestAnimationFrame(animate);
     controls.update();

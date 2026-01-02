@@ -83,6 +83,8 @@ main {
       position: relative;
       padding: 3rem 2rem;
       display: grid;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
       gap: 3rem;
 
       p {
@@ -254,6 +256,7 @@ footer {
   padding: 12px 20px;
   border-radius: 8px;
   border: none;
+  border: 1px solid white;
   cursor: pointer;
   background: black;
   color: white;

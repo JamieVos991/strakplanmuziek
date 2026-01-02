@@ -1,7 +1,13 @@
-// three-album.js
-// Gebruik met: <script type="module" src="./scripts/three-album.js"></script>
-
-// Container in footer maken
+document.addEventListener("DOMContentLoaded", () => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    });
+  });
+  
 const footer = document.querySelector("footer");
 const container = document.createElement("div");
 container.id = "album-3d-container";

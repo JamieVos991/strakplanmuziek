@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: white;
   overflow-x: hidden;
 }
 
@@ -10,6 +10,7 @@ main {
     &:nth-of-type(1) {
       display: grid;
       place-content: center;
+      background-color: black;
       padding: 1rem;
       height: 100vh;
 
@@ -164,7 +165,7 @@ main {
       }
     }
     &:nth-of-type(6) {
-      color: white;
+      background-color: black;
       height: 50vh;
       display: grid;
       place-content: center;
@@ -246,10 +247,11 @@ article.popup.is-visible {
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
+  background-color: white;
+  text-align: center;
+  padding: 2rem;
+  display: grid;
+  place-content: center;
 }
 
 .three-btn {

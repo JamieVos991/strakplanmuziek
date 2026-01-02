@@ -8,7 +8,7 @@ button?.addEventListener("click", async () => {
 
   button.style.display = "none";
 
-  const footer = document.querySelector("footer");
+  const footer = document.querySelector("section:nth-of-type(6)");
   const container = document.createElement("div");
   container.id = "album-3d-container";
   container.style.width = "300px";

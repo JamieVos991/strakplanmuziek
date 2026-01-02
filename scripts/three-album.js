@@ -48,7 +48,7 @@ function loadScript(url) {
   scene.add(directionalLight);
 
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("strakplanmuziek/assets/spotify-achtergrond.png");
+  const texture = textureLoader.load("/assets/spotify-achtergrond.png");
 
   const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.08);
 

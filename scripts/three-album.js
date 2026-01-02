@@ -48,12 +48,24 @@ function loadScript(url) {
   scene.add(directionalLight);
 
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("../assets/spotify-achtergrond.png");
+  const texture = textureLoader.load("strakplanmuziek/assets/spotify-achtergrond.png");
 
-  const geometry = new THREE.BoxGeometry(1.2, 1.2, .08);
-  const material = new THREE.MeshStandardMaterial({ map: texture });
-  const albumMesh = new THREE.Mesh(geometry, material);
-  scene.add(albumMesh);
+  const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.08);
+
+// Materials per side: [Right, Left, Top, Bottom, Front, Back]
+const materials = [
+  new THREE.MeshStandardMaterial({ color: 0xffffff }), // right
+  new THREE.MeshStandardMaterial({ color: 0xffffff }), // left
+  new THREE.MeshStandardMaterial({ color: 0xffffff }), // top
+  new THREE.MeshStandardMaterial({ color: 0xffffff }), // bottom
+  new THREE.MeshStandardMaterial({ map: texture }),    // front
+  new THREE.MeshStandardMaterial({ map: texture })     // back
+];
+
+const albumMesh = new THREE.Mesh(geometry, materials);
+scene.add(albumMesh);
+
+
 
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;

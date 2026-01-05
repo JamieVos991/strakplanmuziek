@@ -43,8 +43,6 @@ ul {
 
 h1 {
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(100px);
 }
 
 h2,

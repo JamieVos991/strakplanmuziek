@@ -26,7 +26,7 @@ loginForm.addEventListener("submit", async (e) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log("Ingelogd:", userCredential.user);
 
-    window.location.href = "../dashboard.html";
+    window.location.href = "dashboard.html";
 
   } catch (error) {
     console.error(error);

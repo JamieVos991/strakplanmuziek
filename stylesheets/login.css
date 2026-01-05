@@ -3,17 +3,25 @@ body {
   place-content: center;
   height: 100dvh;
   padding: 1rem;
+  background-color: black;
+  color: white;
   font-family: var(--font-family-gillsans);
 }
 
 form {
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   flex-direction: column;
   max-width: 25rem;
   justify-content: center;
   padding: 2.5rem 1.5rem;
   gap: 1.5rem;
+
+  input {
+    background: black;
+    border: 1px solid white;
+    color: white;
+  }
 
   header {
     display: grid;
@@ -44,5 +52,14 @@ form {
         width: 100%;
       }
     }
+  }
+
+  button {
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
   }
 }

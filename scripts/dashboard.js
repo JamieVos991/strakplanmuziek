@@ -77,47 +77,59 @@ showForm.addEventListener("submit", async (e) => {
 });
 
 async function loadShows() {
-  upcomingList.innerHTML = "";
-  pastList.innerHTML = "";
-
-  try {
-    const snapshot = await getDocs(collection(db, "shows"));
-    if (snapshot.empty) {
-      upcomingList.innerHTML = "<li>Geen shows</li>";
-      return;
+    upcomingList.innerHTML = "";
+    pastList.innerHTML = "";
+  
+    try {
+      const snapshot = await getDocs(collection(db, "shows"));
+      if (snapshot.empty) {
+        upcomingList.innerHTML = "<li>Geen shows</li>";
+        return;
+      }
+  
+      const shows = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+  
+      const upcomingShows = shows
+        .filter(isFuture)
+        .sort((a, b) => parseShowDate(a) - parseShowDate(b));
+  
+      const pastShows = shows
+        .filter(show => !isFuture(show))
+        .sort((a, b) => parseShowDate(b) - parseShowDate(a)); // nieuwste bovenaan
+  
+      function renderShow(show, targetList) {
+        const li = document.createElement("li");
+        const dateStr = `${show.date_day} ${show.day_month} ${show.time ?? ""}`;
+  
+        li.innerHTML = `
+          <p><strong>${show.name}</strong> – ${show.place}</p>
+          <em>${dateStr}</em>
+          ${isFuture(show) ? `<div><button class="edit" data-id="${show.id}">Bewerken</button>` : ""}
+          <button class="delete" data-id="${show.id}">Verwijderen</button></div>
+        `;
+  
+        targetList.appendChild(li);
+      }
+  
+      upcomingShows.forEach(show => renderShow(show, upcomingList));
+      pastShows.forEach(show => renderShow(show, pastList));
+  
+      document.querySelectorAll(".edit").forEach(btn => {
+        btn.addEventListener("click", () => editShow(btn.dataset.id));
+      });
+  
+      document.querySelectorAll(".delete").forEach(btn => {
+        btn.addEventListener("click", () => deleteShow(btn.dataset.id));
+      });
+  
+    } catch (error) {
+      console.error("Fout bij laden shows:", error);
     }
-
-    const shows = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-      .sort((a, b) => parseShowDate(a) - parseShowDate(b));
-
-    shows.forEach(show => {
-      const li = document.createElement("li");
-      const date = parseShowDate(show);
-      const dateStr = `${show.date_day} ${show.day_month} ${show.time ?? ""}`;
-
-      li.innerHTML = `
-        <strong>${show.name}</strong> - ${show.place} <br/>
-        <em>${dateStr}</em>
-        <br/>
-        ${isFuture(show) ? `<button class="edit" data-id="${show.id}">Bewerken</button>` : ""}
-        <button class="delete" data-id="${show.id}">Verwijderen</button>
-      `;
-
-      if (isFuture(show)) upcomingList.appendChild(li);
-      else pastList.appendChild(li);
-    });
-
-    document.querySelectorAll(".edit").forEach(btn => {
-      btn.addEventListener("click", () => editShow(btn.dataset.id));
-    });
-    document.querySelectorAll(".delete").forEach(btn => {
-      btn.addEventListener("click", () => deleteShow(btn.dataset.id));
-    });
-
-  } catch (error) {
-    console.error("Fout bij laden shows:", error);
   }
-}
+  
 
 async function editShow(id) {
   const docRef = doc(db, "shows", id);
@@ -134,7 +146,7 @@ async function editShow(id) {
 }
 
 async function deleteShow(id) {
-  if (!confirm("Weet je zeker dat je deze show wilt verwijderen?")) return;
+  if (!confirm("Weet je zeker dat je dit optreden wilt verwijderen?")) return;
   try {
     await deleteDoc(doc(db, "shows", id));
     loadShows();

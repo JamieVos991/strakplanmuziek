@@ -4,16 +4,14 @@ import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function initGSAP() {
-  gsap.fromTo(
-    "h1",
-    { autoAlpha: 0, y: 100 },
-    {
-      autoAlpha: 1,
-      y: 0,
-      duration: 1.2,
-      ease: "power4.out",
-    }
-  );
+  gsap.set("h1", { autoAlpha: 0, y: 100 });
+
+  gsap.to("h1", {
+    autoAlpha: 1,
+    y: 0,
+    duration: 1.2,
+    ease: "power4.out",
+  });
 
   gsap.fromTo(
     "h1 .h1-muziek",

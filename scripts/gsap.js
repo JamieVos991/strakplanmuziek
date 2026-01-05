@@ -4,6 +4,10 @@ import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function initGSAP() {
+  // Lock scroll immediately
+  document.documentElement.classList.add("no-scroll");
+
+  // Run animations
   gsap.fromTo(
     "h1",
     { y: 100, autoAlpha: 0 },
@@ -39,21 +43,12 @@ export function initGSAP() {
     }
   );
 
-  gsap.from(
-    "section:nth-of-type(3) p, section:nth-of-type(3) a, section:nth-of-type(3) h2",
-    {
-      scrollTrigger: {
-        trigger: "section:nth-of-type(3) p",
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-      y: 50,
-      autoAlpha: 0,
-      duration: 1,
-      ease: "power3.out",
-    }
-  );
+  setTimeout(() => {
+    document.documentElement.classList.remove("no-scroll");
+  }, 700); 
 }
+
+
 
 
 

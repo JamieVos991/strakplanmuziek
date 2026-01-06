@@ -17,7 +17,7 @@
     sans-serif;
 
   --font-groote-p: 1.1rem;
-  --font-groote-h1: clamp(3rem, 35vw, 100vh);
+  --font-groote-h1: 7rem;
   --font-groote-h2: 2rem;
   --font-groote-h3: 1.3rem;
 
@@ -63,6 +63,7 @@ select {
 
 .font-h1 {
   font-size: var(--font-groote-h1);
+  max-width: 18rem;
 }
 
 .font-h2 {

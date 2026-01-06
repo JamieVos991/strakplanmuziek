@@ -13,6 +13,29 @@ main {
       background-color: black;
       padding: 1rem;
       height: 100vh;
+      z-index: 5;
+      position: relative;
+
+      @media (min-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        place-content: end;
+        align-items: start;
+        padding: 2rem;
+
+        article {
+          background-image: url(../assets/123.jpg);
+          height: 50vh;
+          width: 100%;
+          background-size: cover;
+          z-index: 10;
+          background-position: top;
+
+          @media (min-width: 1400px) {
+            background-position: 0 -2rem;
+          }
+        }
+      }
 
       h1 {
         color: var(--kleur-primair-h1);
@@ -22,12 +45,33 @@ main {
         word-break: break-word;
         text-align: center;
 
+        @media (min-width: 1000px) {
+          word-break: normal;
+          max-width: 100%;
+
+          span {
+            display: none;
+          }
+
+          &::before {
+            content: "(24)";
+            position: absolute;
+            font-size: 1.4rem;
+            right: -40px;
+            top: -20px;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
+
         .h1-muziek {
           color: var(--kleur-secundair-h1);
         }
 
         &::after {
-          content: " IEDEREEN";
+          content: "IEDEREEN";
           font-size: 2rem;
         }
       }
@@ -38,6 +82,10 @@ main {
       background-image: url(../assets/foto-staand.jpeg);
       background-size: cover;
       background-position: bottom;
+
+      @media (min-width: 1000px) {
+        display: none;
+      }
     }
 
     &:nth-of-type(3) {
@@ -48,9 +96,16 @@ main {
       padding-top: 3rem;
       position: relative;
 
+      @media (min-width: 1000px) {
+      }
+
       ul {
         display: grid;
         gap: 1.5rem;
+
+        @media (min-width: 30rem) {
+          max-width: 30rem;
+        }
 
         li {
           a {
@@ -76,6 +131,14 @@ main {
         width: 100%;
         transform: translateY(50%) !important;
         overflow: hidden;
+
+        @media (min-width: 1000px) {
+          width: 50%;
+          position: absolute;
+          right: 0;
+          left: initial;
+          transform: translate(50%, 0%) !important;
+        }
       }
     }
 

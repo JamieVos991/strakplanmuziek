@@ -45,7 +45,7 @@ export function getShowDate(show) {
       }
   
       if (diffDays > 1) {
-        element.textContent = `⏳ Volgende show over ${diffDays} dagen`;
+        element.textContent = `⏳ Volgende optreden over ${diffDays} dagen`;
         return;
       }
   

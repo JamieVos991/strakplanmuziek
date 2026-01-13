@@ -226,7 +226,7 @@ main {
       ul:nth-of-type(1) {
         display: grid;
         gap: 1rem;
-        padding: 4rem 2rem 0;
+        padding: 4rem 2rem;
 
         li {
           p {
@@ -358,6 +358,31 @@ footer {
   font-family: var(--font-family-gillsans);
   padding: 0.7rem 1.5rem;
   max-width: max-content;
+}
+
+.three-loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff; /* Of je accentkleur */
+  animation: spin 1s ease-in-out infinite;
+  position: absolute;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#album-3d-container canvas {
+  outline: none;
+  cursor: grab;
+}
+
+#album-3d-container canvas:active {
+  cursor: grabbing;
 }
 
 .h1-muziek,

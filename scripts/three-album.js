@@ -14,7 +14,7 @@ button?.addEventListener("click", async () => {
   parentSection.appendChild(container);
 
   // Maak en toon de spinner
-  const spinner = document.createElement("div");
+  const spinner = document.createElement("article");
   spinner.className = "three-loader";
   container.appendChild(spinner);
 

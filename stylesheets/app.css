@@ -361,8 +361,8 @@ footer {
 }
 
 .three-loader {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border-top-color: #fff; /* Of je accentkleur */

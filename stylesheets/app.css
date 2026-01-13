@@ -72,7 +72,11 @@ main {
         }
 
         .h1-iedereen {
-          font-size: 1rem;
+          font-size: 2rem;
+          width: 8rem;
+          position: absolute;
+          bottom: 7px;
+          left: 13.5rem;
         }
       }
     }

@@ -71,7 +71,8 @@ main {
           color: var(--kleur-secundair-h1);
         }
 
-        .h1-iedereen {
+        &::after {
+          content: "IEDEREEN";
           font-size: 2rem;
         }
       }

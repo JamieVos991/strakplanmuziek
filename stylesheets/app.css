@@ -42,6 +42,7 @@ main {
         font-family: var(--font-family-bebas);
         display: table;
         line-height: 0.8;
+        font-weight: bold;
         word-break: break-word;
         text-align: center;
 
@@ -71,7 +72,7 @@ main {
         }
 
         .h1-iedereen {
-          font-size: 2rem;
+          font-size: 1rem;
         }
       }
     }

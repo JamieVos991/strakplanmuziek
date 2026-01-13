@@ -129,15 +129,24 @@ main {
         }
       }
 
-      img {
+      .draaiende-vinyl-container {
         position: absolute;
         bottom: 0;
-        background: black;
         left: 0;
-        width: 100%;
-        transform: translateY(50%) !important;
-        overflow: hidden;
+        width: 100%; /* Zorg dat de container breed genoeg is */
+        pointer-events: none;
+        overflow: visible;
+      }
 
+      .draaiende-vinyl {
+        display: block;
+        width: 100%;
+        height: auto;
+        will-change: transform;
+        /* transform: translateY(50%) !important;  <-- VERWIJDER DEZE LIJN */
+      }
+
+      img {
         @media (min-width: 1000px) {
           width: 50%;
           position: absolute;

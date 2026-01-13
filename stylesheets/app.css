@@ -36,44 +36,51 @@ main {
           }
         }
       }
+      div {
+        width: 100%;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        background-color: red;
 
-      h1 {
-        color: var(--kleur-primair-h1);
-        font-family: var(--font-family-bebas);
-        display: table;
-        line-height: 0.8;
-        font-weight: bold;
-        word-break: break-word;
-        text-align: center;
+        h1 {
+          color: var(--kleur-primair-h1);
+          font-family: var(--font-family-bebas);
+          display: table;
+          line-height: 0.8;
+          font-weight: bold;
+          word-break: break-word;
+          text-align: center;
 
-        @media (min-width: 1000px) {
-          word-break: normal;
-          max-width: 100%;
+          @media (min-width: 1000px) {
+            word-break: normal;
+            max-width: 100%;
 
-          span {
-            display: none;
+            span {
+              display: none;
+            }
+
+            &::before {
+              content: "(24)";
+              position: absolute;
+              font-size: 1.4rem;
+              right: -40px;
+              top: -20px;
+            }
+
+            &::after {
+              display: none;
+            }
           }
 
-          &::before {
-            content: "(24)";
-            position: absolute;
-            font-size: 1.4rem;
-            right: -40px;
-            top: -20px;
+          .h1-muziek {
+            color: var(--kleur-secundair-h1);
           }
 
           &::after {
-            display: none;
+            content: "IEDEREEN";
+            font-size: 2rem;
           }
-        }
-
-        .h1-muziek {
-          color: var(--kleur-secundair-h1);
-        }
-
-        &::after {
-          content: "IEDEREEN";
-          font-size: 2rem;
         }
       }
     }

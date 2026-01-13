@@ -70,8 +70,7 @@ main {
           color: var(--kleur-secundair-h1);
         }
 
-        &::after {
-          content: "IEDEREEN";
+        .h1-iedereen {
           font-size: 2rem;
         }
       }
@@ -178,7 +177,7 @@ main {
       overflow-x: hidden;
 
       div {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: black;
         height: 100%;
         width: 100%;
         top: 0;
@@ -311,7 +310,8 @@ article.popup.is-visible {
 }
 
 footer {
-  background-color: white;
+  background-color: black;
+  color: white;
   text-align: center;
   padding: 2rem;
   display: grid;

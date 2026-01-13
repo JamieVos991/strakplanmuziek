@@ -8,7 +8,7 @@ button?.addEventListener("click", async () => {
 
   button.style.display = "none";
 
-  const footer = document.querySelector("section:nth-of-type(6)");
+  const footer = document.querySelector("#ul-gsap-overons");
   const container = document.createElement("div");
   container.id = "album-3d-container";
   container.style.width = "300px";
@@ -70,7 +70,7 @@ function initThree(container) {
   const materials = [
     white, 
     white, 
-    white, 
+    red, 
     white, 
     new THREE.MeshStandardMaterial({ map: coverTexture }), 
     new THREE.MeshStandardMaterial({ map: coverTexture })  

@@ -3,15 +3,12 @@ import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/
 import { initGSAP } from "./gsap.js";
 import { getShowDate, startCountdown } from "./countdown.js";
 
-// 🚫 Disable browser scroll restore FIRST
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-// ⬆️ Force scroll to top immediately
 window.scrollTo(0, 0);
 
-// 📱 iOS Safari extra fix
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 

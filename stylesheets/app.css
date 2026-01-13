@@ -39,6 +39,7 @@ main {
       div {
         width: 100%;
         display: flex;
+        /* align-items: center; */
         justify-content: center;
         align-items: center;
 
@@ -157,6 +158,10 @@ main {
       border-top-right-radius: 1rem;
       gap: 3rem;
 
+      @media (min-width: 800px) {
+        display: flex;
+      }
+
       p {
         padding-top: 1rem;
       }
@@ -165,10 +170,19 @@ main {
         display: grid;
         gap: 2.5rem;
 
+        @media (min-width: 800px) {
+          width: 100%;
+        }
+
         div {
           display: flex;
           justify-content: space-between;
           padding-top: 1rem;
+
+          @media (min-width: 800px) {
+            justify-content: flex-start;
+            gap: 1rem;
+          }
         }
 
         li {
@@ -188,8 +202,8 @@ main {
         width: 100%;
         top: 0;
         left: 0;
-        position: absolute;
-        z-index: -1;
+        /* position: absolute; */
+        z-index: 10;
       }
 
       video {
@@ -234,7 +248,7 @@ main {
       }
     }
     &:nth-of-type(6) {
-      background-color: black;
+      background-color: white;
       height: 50vh;
       display: grid;
       place-content: center;
@@ -316,8 +330,8 @@ article.popup.is-visible {
 }
 
 footer {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   text-align: center;
   padding: 2rem;
   display: grid;
@@ -333,4 +347,17 @@ footer {
   background: black;
   color: white;
   font-size: 1rem;
+}
+
+.h1-muziek,
+.h1-iedereen {
+  display: inline-flex; /* Houdt letters op één lijn */
+  margin: 0 0.2em; /* Voegt wat witruimte toe rond de woorden */
+}
+
+.char {
+  display: inline-block;
+  will-change: transform, opacity;
+  backface-visibility: hidden; /* Safari fix voor scherpe letters */
+  -webkit-font-smoothing: antialiased;
 }

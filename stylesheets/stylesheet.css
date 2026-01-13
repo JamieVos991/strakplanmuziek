@@ -30,6 +30,7 @@
 p {
   line-height: var(--line-hoogte-p);
   font-size: var(--font-groote-p);
+  max-width: 30rem;
   font-family: var(--font-family-gillsans);
 }
 

@@ -27,6 +27,12 @@
   --geen-bullets: none;
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 p {
   line-height: var(--line-hoogte-p);
   font-size: var(--font-groote-p);

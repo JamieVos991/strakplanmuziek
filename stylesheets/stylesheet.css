@@ -63,7 +63,7 @@ select {
 
 .font-h1 {
   font-size: var(--font-groote-h1);
-  max-width: 21rem;
+  max-width: 20rem;
 }
 
 .font-h2 {

@@ -348,14 +348,16 @@ footer {
 }
 
 .three-btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: none;
-  border: 1px solid white;
-  cursor: pointer;
-  background: black;
-  color: white;
+  background: #971000;
   font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  font-family: var(--font-family-gillsans);
+  padding: 0.7rem 1.5rem;
+  max-width: max-content;
 }
 
 .h1-muziek,

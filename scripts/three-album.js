@@ -1,5 +1,4 @@
 const button = document.getElementById("load-3d-album");
-
 let initialized = false;
 
 button?.addEventListener("click", async () => {
@@ -8,14 +7,17 @@ button?.addEventListener("click", async () => {
 
   button.style.display = "none";
 
-  const footer = document.querySelector("#ul-gsap-overons");
+  // We voegen de container toe aan de sectie zelf, 
+  // want een <ul> (footer) mag officieel alleen <li> bevatten.
+  const parentSection = button.closest("section"); 
   const container = document.createElement("div");
   container.id = "album-3d-container";
-  container.style.width = "300px";
-  container.style.height = "300px";
+  container.style.width = "100%";
+  container.style.height = "400px"; // Iets hoger voor betere weergave
   container.style.margin = "2rem auto";
-  footer.appendChild(container);
+  parentSection.appendChild(container);
 
+  // Scripts laden
   await loadScript("https://unpkg.com/three@0.124.0/build/three.js");
   await loadScript("https://unpkg.com/three@0.124.0/examples/js/controls/OrbitControls.js");
 
@@ -41,10 +43,10 @@ function initThree(container) {
     0.1,
     1000
   );
-  camera.position.z = 2.2;
+  camera.position.z = 3;
 
   const renderer = new THREE.WebGLRenderer({
-    alpha: true,
+    alpha: true, // Zorgt voor transparante achtergrond
     antialias: true
   });
 
@@ -52,40 +54,44 @@ function initThree(container) {
   renderer.setSize(container.clientWidth, container.clientHeight);
   container.appendChild(renderer.domElement);
 
+  // Belichting
   scene.add(new THREE.AmbientLight(0xffffff, 0.8));
-
   const dir = new THREE.DirectionalLight(0xffffff, 0.6);
   dir.position.set(3, 4, 5);
   scene.add(dir);
 
   const textureLoader = new THREE.TextureLoader();
-  const coverTexture = textureLoader.load(
-    "./assets/spotify-achtergrond.png"
-  );
+  const coverTexture = textureLoader.load("./assets/spotify-achtergrond.png");
 
-  const geometry = new THREE.BoxGeometry(1.2, 1.2, 0.08);
+  // BoxGeometry(breedte, hoogte, dikte)
+  const geometry = new THREE.BoxGeometry(1.5, 1.5, 0.1);
 
-  const white = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  // FIX: 'red' was niet gedefinieerd. We maken nu gewoon materials aan.
+  const whiteMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const coverMat = new THREE.MeshStandardMaterial({ map: coverTexture });
 
+  // Materials volgorde: [rechts, links, boven, onder, voorkant, achterkant]
   const materials = [
-    white, 
-    white, 
-    red, 
-    white, 
-    new THREE.MeshStandardMaterial({ map: coverTexture }), 
-    new THREE.MeshStandardMaterial({ map: coverTexture })  
+    whiteMat, // rechts
+    whiteMat, // links
+    whiteMat, // boven
+    whiteMat, // onder
+    coverMat, // voorkant
+    coverMat  // achterkant
   ];
 
   const album = new THREE.Mesh(geometry, materials);
   scene.add(album);
 
+  // OrbitControls (let op: THREE.OrbitControls hoofdlettergevoelig)
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 8;
+  controls.autoRotateSpeed = 4;
 
   window.addEventListener("resize", () => {
+    if (!container) return;
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);

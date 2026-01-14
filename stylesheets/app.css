@@ -204,6 +204,7 @@ main {
     &:nth-of-type(5) {
       position: relative;
       overflow-x: hidden;
+      min-height: 70vh;
 
       div {
         background-color: black;

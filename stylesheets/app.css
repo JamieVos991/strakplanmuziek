@@ -186,7 +186,7 @@ main {
         div {
           display: flex;
           justify-content: space-between;
-          padding-top: 1rem;
+          padding: 1rem 1rem 0 0;
 
           @media (min-width: 800px) {
             justify-content: flex-start;
@@ -295,6 +295,12 @@ article.popup {
     gap: 1rem;
     align-items: center;
 
+    li:nth-of-type(1) {
+      img {
+        filter: blur(6px);
+      }
+    }
+
     li:nth-of-type(2) {
       p:nth-of-type(1) {
         font-weight: 500;
@@ -308,7 +314,8 @@ article.popup {
   }
 
   img {
-    width: 4.5rem;
+    width: 4rem;
+    aspect-ratio: 1;
   }
 
   button {
@@ -333,7 +340,9 @@ article.popup.is-visible {
   font-size: 1rem;
   justify-self: left;
   border: 1px solid black;
+  color: black;
   height: 2.5rem;
+  border-radius: 2rem;
   width: 12rem;
   cursor: pointer;
 }

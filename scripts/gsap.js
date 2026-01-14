@@ -74,3 +74,75 @@ function launchConfetti() {
     if (Date.now() < end) requestAnimationFrame(frame);
   }());
 }
+
+export function initPopup() {
+
+  const popup = document.getElementById("promo-popup");
+  
+  const closeBtn = document.getElementById("popup-close");
+  
+  const STORAGE_KEY = "promoPopupClosed";
+  
+  
+  
+  if (!popup) return;
+  
+  
+  
+  // Check of de gebruiker de popup al eerder heeft gesloten
+  
+  if (!localStorage.getItem(STORAGE_KEY)) {
+  
+  // Toon de popup na een vertraging van 3.5 seconden
+  
+  setTimeout(() => {
+  
+  popup.classList.add("is-visible");
+  
+  
+  
+  gsap.fromTo(popup,
+  
+  { y: 50, opacity: 0 },
+  
+  { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+  
+  );
+  
+  }, 3500);
+  
+  }
+  
+  
+  
+  // Event listener voor het sluiten
+  
+  if (closeBtn) {
+  
+  closeBtn.addEventListener("click", () => {
+  
+  gsap.to(popup, {
+  
+  y: 40,
+  
+  opacity: 0,
+  
+  duration: 0.5,
+  
+  ease: "power2.in",
+  
+  onComplete: () => {
+  
+  popup.classList.remove("is-visible");
+  
+  localStorage.setItem(STORAGE_KEY, "true"); // Onthoud dat de popup gesloten is
+  
+  },
+  
+  });
+  
+  });
+  
+  }
+  
+  }

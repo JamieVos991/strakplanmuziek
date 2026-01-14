@@ -86,30 +86,32 @@ export function initGSAP() {
     }, "-=0.7");
 
   // --- 3. ScrollTrigger animaties voor secties verderop ---
- const fadeUpElements = ['#ul-gsap', '#ul-gsap-overons'];
- fadeUpElements.forEach((selector) => {
-   const element = document.querySelector(selector);
-   if (element) {
-     gsap.from(element, {
-       scrollTrigger: {
-         trigger: element,
-         start: "top 85%", 
-         toggleActions: "play none none none",
-       },
-       y: 60,
-       opacity: 0,
-       duration: 1,
-       ease: "power3.out",
-       // Voeg deze regels toe:
-       onStart: () => {
-         element.style.pointerEvents = "none"; // Blokkeer interactie
-       },
-       onComplete: () => {
-         element.style.pointerEvents = "auto"; // Zet interactie weer aan
-       }
-     });
-   }
- });
+ // --- 3. ScrollTrigger animaties voor secties verderop ---
+  const fadeUpElements = ['#ul-gsap', '#ul-gsap-overons'];
+  fadeUpElements.forEach((selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      gsap.from(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%", 
+          toggleActions: "play none none none",
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        // Voeg deze regels toe:
+        onStart: () => {
+          element.style.pointerEvents = "none"; // Blokkeer interactie
+        },
+        onComplete: () => {
+          element.style.pointerEvents = "auto"; // Zet interactie weer aan
+        }
+      });
+    }
+  });
+}
 
 /**
  * Initialiseert de Promo Popup met LocalStorage check

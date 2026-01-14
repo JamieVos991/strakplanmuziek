@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function startCountdown() {
   // Stel de datum in waar we naar aftellen (21 februari 2026)
-  const countDownDate = new Date("Feb 21, 2026 00:00:00").getTime();
+  const countDownDate = new Date("Jan 30, 2026 00:00:00").getTime();
 
   // Update de countdown elke 1 seconde
   const x = setInterval(function() {

@@ -1,6 +1,5 @@
 body {
   background-color: black;
-  overflow-x: hidden;
 }
 
 main {
@@ -85,7 +84,7 @@ main {
 
     &:nth-of-type(2) {
       min-height: 80vh;
-      background-image: url(../assets/foto-staand.jpeg);
+      background-image: url(../assets/foto-staand.webp);
       background-size: cover;
       background-position: bottom;
 
@@ -187,6 +186,7 @@ main {
           display: flex;
           justify-content: space-between;
           padding: 1rem 1rem 0 0;
+          gap: 1rem;
 
           @media (min-width: 800px) {
             justify-content: flex-start;
@@ -292,7 +292,7 @@ article.popup {
 
   ul {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
 
     li:nth-of-type(1) {
@@ -410,9 +410,14 @@ footer {
 .show-link {
   display: inline-block;
   color: blue;
+  min-width: fit-content;
   transition: opacity 0.3s;
 }
 
 .show-link:hover {
   opacity: 0.8;
+}
+
+#countdown-timer {
+  font-weight: 600;
 }

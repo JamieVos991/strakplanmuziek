@@ -65,8 +65,6 @@ async function loadFutureShows() {
 
 // Tekent de lijst met shows op het scherm in groepjes.
 function renderNextBatch() {
-
-  // Selecteer een deel van de lijst op basis van de huidige index
   const batch = allFutureShows.slice(currentIndex, currentIndex + showsPerPage);
 
   batch.forEach(show => {
@@ -77,11 +75,19 @@ function renderNextBatch() {
     const day = dateObj.getDate();
     const month = dateObj.toLocaleString("nl-NL", { month: "long" });
 
-    // Maakt de HTML voor elk item
+    // Controleer of er een link is
+    const linkHTML = show.link 
+      ? `<a href="${show.link.url}" target="_blank" class="show-link">${show.link.text}</a>` 
+      : "";
+
     li.innerHTML = `
+      <div>
       <h3>${show.name} - ${show.place}</h3>
+       ${linkHTML}
+    </div>
       <div>
         <p>${day} ${month}</p>
+
         <p>${show.time ? show.time : "Tijd nog niet bekend"}</p>
       </div>
     `;

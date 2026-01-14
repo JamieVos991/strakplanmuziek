@@ -203,7 +203,7 @@ main {
 
     &:nth-of-type(5) {
       position: relative;
-      overflow-x: hidden;
+      padding: 4rem 2rem;
       min-height: 70vh;
 
       div {
@@ -227,7 +227,6 @@ main {
       ul:nth-of-type(1) {
         display: grid;
         gap: 1rem;
-        padding: 4rem 2rem;
 
         li {
           p {
@@ -397,4 +396,14 @@ footer {
   will-change: transform, opacity;
   backface-visibility: hidden; /* Safari fix voor scherpe letters */
   -webkit-font-smoothing: antialiased;
+}
+
+.show-link {
+  display: inline-block;
+  color: blue;
+  transition: opacity 0.3s;
+}
+
+.show-link:hover {
+  opacity: 0.8;
 }

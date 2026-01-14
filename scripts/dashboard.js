@@ -51,6 +51,10 @@ showForm.addEventListener("submit", async (e) => {
   const place = document.getElementById("show-place").value.trim();
   const dateStr = document.getElementById("show-date").value; 
   const time = document.getElementById("show-time").value.trim();
+  
+  // Nieuwe velden ophalen
+  const linkUrl = document.getElementById("show-link-url").value.trim();
+  const linkText = document.getElementById("show-link-text").value.trim();
 
   if (!name || !place || !dateStr) return;
 
@@ -58,7 +62,16 @@ showForm.addEventListener("submit", async (e) => {
   const date_day = dateObj.getDate();
   const day_month = dateObj.toLocaleString('nl-NL', { month: 'long' });
 
-  const showData = { name, place, date: dateStr, date_day, day_month, time };
+  // Voeg link data toe aan het object (optioneel)
+  const showData = { 
+    name, 
+    place, 
+    date: dateStr, 
+    date_day, 
+    day_month, 
+    time,
+    link: linkUrl ? { url: linkUrl, text: linkText || "Tickets" } : null 
+  };
 
   try {
     if (editId) {
@@ -142,6 +155,8 @@ async function editShow(id) {
   document.getElementById("show-place").value = show.place;
   document.getElementById("show-date").value = show.date;
   document.getElementById("show-time").value = show.time ?? "";
+  document.getElementById("show-link-url").value = show.link?.url ?? "";
+  document.getElementById("show-link-text").value = show.link?.text ?? "";
   editId = id;
 }
 
